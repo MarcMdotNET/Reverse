@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Marc Mironescu</title>
+    <title>REVERSE: A Coding Project By Marc Mironescu</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,7 +23,7 @@
     <!-- ==== Nav Section ==== -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="img/marcm-pro-nav-light-logo.svg" class="d-inline-block align-text-top" width="32" height="32"> APP NAME</a>
+            <a class="navbar-brand" href="#"><img src="img/reverse-nav-logo.svg" class="d-inline-block align-text-top" width="32" height="32"> REVERSE</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -52,15 +52,42 @@
     <!-- ==== Main Section ==== -->
     <main class="flex-shrink-0">
         <div class="container py-5 px-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+            <h2 class="border-1 border-bottom border-dark">The Code for REVERSE</h2>
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            // Call helloWorld
-                            function helloWorld() {
-                                alert("Hello World");
-                            }                            
+                            //Get the string from the textbox
+                            //controller function
+                            function getValue() {
+                                document.getElementById("alert").classList.add("invisible");
+                                let userString = document.getElementById("userString").value;
+                                let reversedString = reverseString(userString);
+                                displayString(reversedString);
+                            }
+                            
+                            //Reverse the string
+                            //logic function
+                            function reverseString(userString) {
+                                let reversedString = [];
+                            
+                                //reverse a string using a for loop
+                                for (let i = userString.length - 1; i >= 0; i--) {
+                                    reversedString += userString[i];
+                                }
+                            
+                                return reversedString;
+                            }
+                            
+                            //Display the reversed string
+                            //view function
+                            function displayString(reversedString) {
+                            
+                                //Write to the page
+                                document.getElementById("msg").innerHTML = `Your string reversed is: ${reversedString}`;
+                                //Show the alert box
+                                document.getElementById("alert").classList.remove("invisible");
+                            }                           
                         </code>
                     </pre>
                 </div>
@@ -79,7 +106,7 @@
                 <div class="col order-last order-lg-first text-light">
                     <div class="text-center text-lg-start">
                         <span class="align-middle">
-                            <span class="text-muted">&copy;2021</span> Marc Mironescu | contact@marcm.pro
+                            <span class="text-muted">&copy;2022</span> Marc Mironescu | contact@marcm.pro
                         </span>
                     </div>
                 </div>
@@ -88,10 +115,10 @@
                 </div>
                 <div class="col d-flex align-items-center justify-content-center justify-content-lg-end">
                     <div class="row">
-                        <div class="col social"><a href="#" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a></div>
-                        <div class="col social"><a href="#" target="_blank"><i class="fab fa-github fa-2x"></i></a></div>
-                        <div class="col social"><a href="#" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></div>
-                        <div class="col social"><a href="#" target="_blank"><i class="fab fa-youtube fa-2x"></i></a></div>
+                        <div class="col social"><a href="https://www.linkedin.com/in/marcmironescu/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a></div>
+                        <div class="col social"><a href="https://github.com/marcm-pro/Reverse" target="_blank"><i class="fab fa-github fa-2x"></i></a></div>
+                        <div class="col social"><a href="https://twitter.com/marcmironescu/" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></div>
+                        <div class="col social"><a href="https://www.youtube.com/channel/UCl0BS28Coic4KWnatXuLWtQ" target="_blank"><i class="fab fa-youtube fa-2x"></i></a></div>
                     </div>
                 </div>
             </div>
